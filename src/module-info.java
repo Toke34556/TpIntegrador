@@ -6,4 +6,5 @@
  *
  */
 module TpIntegrador {
+	requires java.sql;
 }

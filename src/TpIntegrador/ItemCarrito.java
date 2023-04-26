@@ -10,6 +10,11 @@ public ItemCarrito(Producto producto, int cantidad) {
     this.producto = producto;
     this.cantidad = cantidad;
 }
+public ItemCarrito(Producto producto, int cantidad, boolean fisico) {
+    this.producto = producto;
+    this.cantidad = cantidad;
+    this.producto.setFisico(fisico);
+}
 
 public Producto getProducto() {
 	return producto;

@@ -6,7 +6,7 @@ public abstract class Producto {
 	private LocalDate fechaPublicacion;
 	private int codigo;
 	private double precio;
-	private boolean fisico;
+	private boolean fisico=true;
 	
 	public LocalDate getFechaPublicacion() {
 		return fechaPublicacion;
@@ -42,6 +42,8 @@ public abstract class Producto {
 	public abstract String getEditorial();
 	public abstract String getAutor();
 	
+	public abstract void CargarProducto();
+	public abstract void BorrarProducto();
 }
 	
 	

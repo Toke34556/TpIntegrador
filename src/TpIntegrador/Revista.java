@@ -41,4 +41,8 @@ public class Revista extends Producto {
 		}
 		
 	}
+	public void CargarProducto(Revista l) {
+		ConexionSQL.EnviarSentencia("INSERT INTO producto (FechaPublicacion, precio) VALUES ("+l.getFechaPublicacion()+","+l.getPrecio()+")");
+		ConexionSQL.EnviarSentencia("INSERT INTO libro (Codigo,Nombre,Editor) VALUES (LAST_INSERT_ID()"+l.getNombre()+","+l.getEditor()+")");
+	}
 }

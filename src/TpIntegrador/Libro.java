@@ -54,6 +54,18 @@ public class Libro extends Producto {
 		}	
 	}
 	
+	public void CargarProducto(Libro l) {
+		ConexionSQL.EnviarSentencia("INSERT INTO producto (FechaPublicacion, precio) VALUES ("+l.getFechaPublicacion()+","+l.getPrecio()+")");
+		ConexionSQL.EnviarSentencia("INSERT INTO libro (Codigo,Titulo,Editorial,Autor) VALUES (LAST_INSERT_ID()"+l.getTitulo()+","+l.getEditorial()+","+l.getAutor()+")");
+	}
+	
+	public void BorrarProducto(Libro l) {
+		ConexionSQL.EnviarSentencia("DELETE FROM libros where (Titulo = "+l.getTitulo()+","+"Editorial = "+l.getEditorial()+"Autor = "+l.getAutor()+")");
+	}
+	
+	public void BorrarProducto(int codigo) {
+		
+	}
 	
 	
 }
